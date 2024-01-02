@@ -1,6 +1,5 @@
 ## lectureScheduler module project
 
-
 ## project details 
 (created using MERN stack)
 
@@ -96,6 +95,15 @@ screenshots
 ![image](https://github.com/SKstudies/ideamagix-test-project/assets/90096320/924f2996-74fb-4ffa-98ce-7df1c66837c8)
 
 
+
+
+
+
+
+
+
+
+>>(note from me: screen recording is not working right now in my pc if any doubt drop a mail at diveshkkolhe@gmail.com)
 
 
 
