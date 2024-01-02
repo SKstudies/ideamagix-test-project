@@ -27,10 +27,9 @@ const InstructorPage = ({ userType, username }) => {
       <h2>Welcome, {username}!</h2>
       <h3>Your Lectures:</h3>
       <ul>
-      {lectures.map((lecture, index) => (
+      {lectures?.map((lecture, index) => (
         <li key={index}>{`${lecture.course.name} - ${new Date(lecture.date).toLocaleDateString()}`}</li>
-        ))}
-
+      ))}
       </ul>
     </div>
   );
