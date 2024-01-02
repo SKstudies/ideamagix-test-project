@@ -1,0 +1,23 @@
+      const instructorsData = [
+        {
+            name: 'Instructor1',
+            password: 'Password1',
+        },
+        {
+            name: 'Instructor2',
+            password: 'Password2',
+        },
+        {
+            name: 'Instructor3',
+            password: 'Password3',
+        },
+        {
+            name: 'Instructor4',
+            password: 'Password4',
+        },
+        {
+            name: 'Instructor5',
+            password: 'Password5',
+        }
+    ];
+      Instructor.insertMany(instructorsData);
