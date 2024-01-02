@@ -19,13 +19,14 @@ const instructorLogin = async (req, res) => {
 const getInstructorLectures = async (req, res) => {
   try {
     // const { instructorId } = req.body;
-    const { name } = req.body;
+    const { name } = req.query;
+    console.log(name);
     const instructor = await Instructor.findOne({name: name}).populate('lectures.course');
                                                               // populate method is something new i got 
                                                               //.populate('lectures.course'): The populate method is used to replace the specified path in the document with the actual document(s) from another collection. In this case, it populates the 'lectures' field with the corresponding 'course' documents.
                                                               //'lectures.course': This is the path to populate. It means that for each lecture in the 'lectures' array, replace the 'course' field with the actual document from the 'Course' collection.
     console.log(instructor);
-    console.log(instructor.lectures)                      
+    // console.log(instructor.lectures)                      
     if (instructor) {
       res.json({lectures: instructor.lectures });
     } else {

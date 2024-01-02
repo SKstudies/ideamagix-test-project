@@ -11,13 +11,11 @@ const InstructorPage = ({ userType, username }) => {
       headers: {
         'Content-Type': 'application/json',
       }
-    //   body: JSON.stringify({ name: username }),
     })
       .then(response => response.json())
       .then(data => {
         console.log(data);
-        console.log(data.lectures);
-        setLectures(data.lectures);
+        setLectures(data.lectures);  // Set the lectures directly as an array
       })
       .catch(error => {
         console.error('Error:', error);
@@ -29,12 +27,14 @@ const InstructorPage = ({ userType, username }) => {
       <h2>Welcome, {username}!</h2>
       <h3>Your Lectures:</h3>
       <ul>
-        {lectures.map((lecture, index) => (
-          <li key={index}>{`${lecture.course.name} - ${new Date(lecture.date).toLocaleDateString()}`}</li>
+      {lectures.map((lecture, index) => (
+        <li key={index}>{`${lecture.course.name} - ${new Date(lecture.date).toLocaleDateString()}`}</li>
         ))}
+
       </ul>
     </div>
   );
 };
 
 export default InstructorPage;
+
