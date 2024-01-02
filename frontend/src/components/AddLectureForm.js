@@ -1,34 +1,27 @@
 // src/components/AddLectureForm.js
 import React, { useState } from 'react';
 
-const AddLectureForm = ({ courseId, instructors, onAddLecture }) => {
+const AddLectureForm = ({ courseId, onAddLecture }) => {
   const [lectureData, setLectureData] = useState({
     instructorId: '',
     date: '',
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setLectureData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+    setLectureData({ ...lectureData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     onAddLecture(courseId, lectureData);
+    // Optionally, reset the form fields
+    setLectureData({ instructorId: '', date: '' });
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>Instructor:</label>
-      <select name="instructorId" value={lectureData.instructorId} onChange={handleChange} required>
-        <option value="" disabled>Select an instructor</option>
-        {instructors.map((instructor) => (
-          <option key={instructor._id} value={instructor._id}>{instructor.name}</option>
-        ))}
-      </select>
+      <label>Instructor ID:</label>
+      <input type="text" name="instructorId" value={lectureData.instructorId} onChange={handleChange} required />
 
       <label>Date:</label>
       <input type="date" name="date" value={lectureData.date} onChange={handleChange} required />

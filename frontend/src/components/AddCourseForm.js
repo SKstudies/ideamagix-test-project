@@ -10,16 +10,14 @@ const AddCourseForm = ({ onAddCourse }) => {
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setCourseData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+    setCourseData({ ...courseData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     onAddCourse(courseData);
+    // Optionally, reset the form fields
+    setCourseData({ name: '', level: '', description: '', image: '' });
   };
 
   return (
