@@ -97,7 +97,7 @@ const addLecture = async (req, res) => {
     await Instructor.updateOne(
       { _id: instructorId },
       {$push: {lectures: {
-                            Course: courseId,
+                            course: courseId,
                             date: date,
                          },
                },
@@ -110,7 +110,7 @@ const addLecture = async (req, res) => {
       { _id: courseId },
       {
         $push: { lectures: {
-                              Instructor: instructorId,
+                              instructor: instructorId,
                               date: date,
                             },
                 },
@@ -127,14 +127,25 @@ const addLecture = async (req, res) => {
 
 
 
-// easiest of everything ....... get alllll courses
+// // easiest of everything ....... get alllll courses (i though)
+// const getAllCourses = async (req, res) => {
+//   try {
+//     const courses = await Course.find();
+//     res.json({ success: true, courses });
+//   } catch (error) {
+//     console.error(error);
+//     res.status(401).json({message: 'db error' });
+//   }
+// };
+
 const getAllCourses = async (req, res) => {
   try {
-    const courses = await Course.find();
+    const courses = await Course.find().populate('lectures.instructor');
     res.json({ success: true, courses });
   } catch (error) {
     console.error(error);
-    res.status(401).json({message: 'db error' });
+    res.status(500).json({ message: 'DB error Internal Server Error' });
   }
 };
+
 export { adminLogin, addCourse, addLecture, getAllCourses};

@@ -1,4 +1,3 @@
-// src/components/AddCourseForm.js
 import React, { useState } from 'react';
 
 const AddCourseForm = ({ onAddCourse }) => {
@@ -16,7 +15,7 @@ const AddCourseForm = ({ onAddCourse }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onAddCourse(courseData);
-    // Optionally, reset the form fields
+    // reset the form fields
     setCourseData({ name: '', level: '', description: '', image: '' });
   };
 
