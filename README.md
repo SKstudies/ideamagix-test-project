@@ -102,7 +102,28 @@ screenshots
 
 
 
+db logic I settled on.
+// i am thinking of this logic :::
+// 1. admin can add a course without lectures at the first.
+// so I can get everything 
 
+// a. Name
+// b. Level
+// c. Description
+// d. Image
+
+
+// 2. then on the frontend I will display the course card with add lecture btn
+// it will should give us 
+
+// 1. course name / id
+// 2. instructor name
+// 3. llecture date .
+
+
+// 3. then I can check if given date is already present in the lectrue obj array of the instructor......
+//   if present then lecture cannot be added>
+//  else I can update the instructors lecture array with {course,date} and course lecture array with{instructor , date} 
 >>(note from me: screen recording is not working right now in my pc if any doubt drop a mail at diveshkkolhe@gmail.com)
 
 
