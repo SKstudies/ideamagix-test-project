@@ -5,7 +5,7 @@ import AddLectureForm from './AddLectureForm';
 const AdminPage = ({ userType }) => {
   const [courses, setCourses] = useState([]);
 
-  // Assume you have a function to fetch all courses
+  //to fetch all courses
   const fetchCourses = () => {
     fetch(`http://localhost:5000/${userType}/courses`)
       .then(response => response.json())
@@ -24,7 +24,7 @@ const AdminPage = ({ userType }) => {
   }, [userType]);
 
   const handleAddCourse = (courseData) => {
-    // Assume you have a function to add a new course
+    //to add a new course
     fetch(`http://localhost:5000/${userType}/add-course`, {
       method: 'POST',
       headers: {
@@ -44,7 +44,7 @@ const AdminPage = ({ userType }) => {
   };
 
   const handleAddLecture = (courseId, lectureData) => {
-    // Assume you have a function to add a new lecture
+    //to add a new lecture
     fetch(`http://localhost:5000/${userType}/add-lectures`, {
       method: 'POST',
       headers: {

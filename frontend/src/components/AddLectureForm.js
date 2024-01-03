@@ -1,4 +1,3 @@
-// src/components/AddLectureForm.js
 import React, { useState, useEffect } from 'react';
 
 const AddLectureForm = ({ courseId, onAddLecture }) => {
@@ -10,7 +9,7 @@ const AddLectureForm = ({ courseId, onAddLecture }) => {
 
   useEffect(() => {
     // Fetch all instructors on component mount
-    fetch('http://localhost:5000/instructor/instructors')  // Corrected endpoint
+    fetch('http://localhost:5000/instructor/instructors')  
       .then(response => response.json())
       .then(data => {
         console.log(data);

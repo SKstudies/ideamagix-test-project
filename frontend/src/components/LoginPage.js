@@ -1,4 +1,3 @@
-// src/components/LoginPage.js
 import React, { useState } from 'react';
 
 const LoginPage = ({ onLogin }) => {
@@ -7,7 +6,7 @@ const LoginPage = ({ onLogin }) => {
   const [userType, setUserType] = useState('admin'); // 'admin' or 'instructor'
 
   const handleLogin = () => {
-    // Assuming you have a backend endpoint for login
+    //endpoint for login
     fetch(`http://localhost:5000/${userType}/login`, {
       method: 'POST',
       headers: {
@@ -18,7 +17,7 @@ const LoginPage = ({ onLogin }) => {
       .then(response => response.json())
       .then(data => {
         console.log(data);
-        // Assuming the backend sends a success message on successful login
+        //on successful login
         if (data.message.includes('successful')) {
           onLogin(userType, username);
         } else {

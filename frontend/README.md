@@ -68,3 +68,29 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+#db logic
+
+// i am thinking of this logic :::
+// 1. how about this admin can add a course without lectures at the first.
+// so we can get everything 
+
+// a. Name
+// b. Level
+// c. Description
+// d. Image
+
+
+// 2. then on the frontend we will display the course card with add lecture btn
+// it will should give us 
+
+// 1. course name / id
+// 2. instructor name
+// 3. llecture date .
+
+
+// 3. then we can check if given date is already present in the lectrue obj array of the instructor......
+//   if present then lecture cannot be added>
+//  else we can update the instructors lecture array with {course,date} and course lecture array with{instructor , date} 
