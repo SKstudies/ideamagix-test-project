@@ -74,7 +74,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 #db logic
 
 // i am thinking of this logic :::
-// 1. how about this admin can add a course without lectures at the first.
+// 1.admin can add a course without lectures at the first.
 // so we can get everything 
 
 // a. Name
