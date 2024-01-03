@@ -1,4 +1,3 @@
-// src/components/InstructorPage.js
 import React, { useEffect, useState } from 'react';
 
 const InstructorPage = ({ userType, username }) => {
